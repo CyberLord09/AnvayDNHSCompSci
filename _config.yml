@@ -1,9 +1,9 @@
-title: Nighthawk-Pages
+title: Anvay's CompSci Blog
 description: "August 2023 to June 2024"
-owner_name: Tirth Thakkar
-github_username: Tirth-Thakkar
-github_repo: "Nighthawk-Pages"
-baseurl: "/Nighthawk-Pages"
+owner_name: Anvay Vahia
+github_username: CyberLord09
+github_repo: "AnvayDNHSCompSci"
+baseurl: "/AnvayDNHSCompSci"
 remote_theme: jekyll/minima
 minima:
   social_links:
