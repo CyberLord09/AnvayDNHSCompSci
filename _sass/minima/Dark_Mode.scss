@@ -8,7 +8,7 @@ $overlay-light: mix($dark-grey, white, 86%);
 
 html, body, input, textarea, select, button {   
   color: $high-emph !important;
-  background-color: $dark-grey !important;
+  background: linear-gradient(to right, #001325, #000d1a) !important;
 }
 
 a {
@@ -24,7 +24,6 @@ a:hover {
 }
 
 .site-nav {
-    background-color: $dark-grey;
     border-color: $overlay-light;
 }
 
@@ -77,9 +76,9 @@ table td{
     filter: brightness(80%);
 }
 
-canvas {
-    filter: invert(100%);
-}
+// canvas {
+//    filter: invert(100%);
+//}
 
 .post-list > li > div {
     box-shadow: none !important;
