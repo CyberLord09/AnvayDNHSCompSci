@@ -7,7 +7,7 @@ baseurl: "/AnvayDNHSCompSci"
 remote_theme: jekyll/minima
 minima:
   social_links:
-    - { platform: github, user_url: "https://github.com/nighthawkcoders"}
+    - { platform: github, user_url: "https://github.com/CyberLord09/AnvayDNHSCompSci"}
     - { platform: github, user_url: "https://github.com/CyberLord09"}
 # remote_theme: pages-themes/dinky@v0.2.0
 # remote_theme: pages-themes/minimal@v0.2.0

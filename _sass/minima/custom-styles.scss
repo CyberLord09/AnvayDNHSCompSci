@@ -239,16 +239,18 @@ h1, h2, h3, h4 {
   top: 0;
   width: 51%;
   height: 100%;
-  background: #222222;
+  background: #171212;
   z-index: 1000;
 }
 
 #loader-wrapper .loader-section.section-left {
   left: 0;
+  background: #171212;
 }
 
 #loader-wrapper .loader-section.section-right {
   right: 0;
+  background: #171212;
 }
 
 #content {

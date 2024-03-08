@@ -200,6 +200,11 @@ courses: { compsci: {week: 13} }
       this.animate(this.obj["Flip"], 0);
     }
 
+    startFlippingL() {
+      this.stopAnimate();
+      this.animate(this.obj["FlipL"], 0);
+    }
+
     startResting() {
       this.stopAnimate();
       this.animate(this.obj["Rest"], 0);
@@ -235,7 +240,7 @@ courses: { compsci: {week: 13} }
       if (event.repeat) {
         mario.stopAnimate();
       } else {
-        mario.startPuffing();
+        mario.startFlippingL();
       }
     } else if (event.key === "w"||event.key==="ArrowUp") {
       event.preventDefault();
@@ -244,7 +249,14 @@ courses: { compsci: {week: 13} }
       } else {
         mario.startFlipping();
       }
-    }else if (event.key === "ArrowLeft" || event.key==="a") {
+    } else if (event.key === "Space" || event.key===" ") {
+      event.preventDefault();
+      if (event.repeat) {
+        mario.stopAnimate();
+      } else {
+        mario.startPuffing();
+      }
+    } else if (event.key === "ArrowLeft" || event.key==="a") {
       event.preventDefault();
       if (event.repeat) {
         mario.startCheeringL();

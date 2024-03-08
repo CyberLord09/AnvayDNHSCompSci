@@ -8,7 +8,7 @@ $overlay-light: mix($dark-grey, white, 86%);
 
 html, body, input, textarea, select, button {   
   color: $high-emph !important;
-  background: linear-gradient(to right, #001325, #000d1a) !important;
+  background: linear-gradient(to right, #140101, #00060c) !important;
 }
 
 a {
@@ -20,7 +20,7 @@ a:hover {
 }
 
 .site-title, .site-title:visited, .site-nav, .page-link {
-    color: $high-emph !important;
+    color: rgb(75, 186, 255) !important;
 }
 
 .site-nav {
