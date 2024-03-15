@@ -12,8 +12,11 @@ import JumpPlatform from './JumpPlatform.js';
 import Player from './Player.js';
 import Tube from './Tube.js';
 import Tree from './Tree.js';
+import Gravestone from './Gravestone.js';
 import Goomba from './Goomba.js';
 import FlyingGoomba from './FlyingGoomba.js';
+import Brain from './Brain.js'
+import FlyingUFO from './FlyingUFO.js';
 import BlockPlatform from './BlockPlatform.js';
 import Mushroom from './Mushroom.js';
 import Coin from './Coin.js';
@@ -170,6 +173,7 @@ const GameSetup = {
       obstacles: {
         tube: { src: "/images/platformer/obstacles/tube.png" },
         coin: { src: "/images/platformer/obstacles/coin.png"},
+        gravestone: { src: "/images/platformer/obstacles/gravestone.png"},
         tree: { src: "/images/platformer/obstacles/tree.png"}
       },
       platforms: {
@@ -195,6 +199,7 @@ const GameSetup = {
         mountains: { src: "/images/platformer/backgrounds/mountains.jpg" },
         clouds : { src: "/images/platformer/backgrounds/clouds.png"},
         space: { src: "/images/platformer/backgrounds/planet.jpg" },
+        zombie: { src: "/images/platformer/backgrounds/zombie.png" },
         castles: { src: "/images/platformer/backgrounds/castles.png" },
         loading: { src: "/images/platformer/backgrounds/greenscreen.png" },
         complete: { src: "/images/platformer/backgrounds/OneStar.png" },
@@ -260,6 +265,20 @@ const GameSetup = {
           height: 452,
           scaleSize: 60,
           speedRatio: 0.7,
+        },
+        brain: {
+          src: "/images/platformer/sprites/brain.png",
+          width: 401,
+          height: 268,
+          scaleSize: 60,
+          speedRatio: 0.7,
+        },
+        flyingUFO: {
+          src: "/images/platformer/sprites/flying-ufo.png",
+          width: 1920,
+          height: 1166,
+          scaleSize: 150,
+          speedRatio: 0.8,
         },
         mushroom: {
           src: "/images/platformer/platforms/mushroom.png",
@@ -416,6 +435,32 @@ const GameSetup = {
         ];
         // Space Game Level added to the GameEnv ...
         new GameLevel( {tag: "space", callback: this.playerOffScreenCallBack, objects: spaceGameObjects} );
+
+
+        const zombieApocolypse = [
+          // GameObject(s), the order is important to z-index...
+          { name: 'zombie', id: 'background', class: Background, data: this.assets.backgrounds.zombie },
+          { name: 'grass', id: 'platform', class: Platform, data: this.assets.platforms.grass },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.2, yPercentage: 0.85 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.2368, yPercentage: 0.85 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.5, yPercentage: 0.85 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.5368, yPercentage: 0.85 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 1 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.9 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.8 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.7 },
+          { name: 'blocks', id: 'jumpPlatform', class: BlockPlatform, data: this.assets.platforms.alien, xPercentage: 0.4, yPercentage: 0.6 },
+          { name: 'brain', id: 'brain', class: Brain, data: this.assets.enemies.brain, xPercentage: 0.3, minPosition: 0.05},
+          { name: 'flyingUFO', id: 'flyingUFO', class: FlyingUFO, data: this.assets.enemies.flyingUFO, xPercentage:  0.5, minPosition:  0.05},
+          { name: 'flyingUFO', id: 'flyingUFO', class: FlyingUFO, data: this.assets.enemies.flyingUFO, xPercentage:  0.5, minPosition:  0.05},
+          { name: 'brain', id: 'brain', class: Brain, data: this.assets.enemies.brain, xPercentage:  0.5, minPosition: 0.3 },
+          //{ name: 'brainSpecial', id: 'brain', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
+          { name: 'monkey', id: 'player', class: Player, data: this.assets.players.monkey },
+          { name: 'gravestone', id: 'gravestone', class: Gravestone, data: this.assets.obstacles.gravestone },
+          { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
+        ];
+        // Space Game Level added to the GameEnv ...
+        new GameLevel( {tag: "zombies", callback: this.playerOffScreenCallBack, objects: zombieApocolypse} );
 
         // Game Over Level definition...
         const endGameObjects = [
