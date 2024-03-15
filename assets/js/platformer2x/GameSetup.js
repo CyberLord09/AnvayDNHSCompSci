@@ -455,7 +455,7 @@ const GameSetup = {
           { name: 'flyingUFO', id: 'flyingUFO', class: FlyingUFO, data: this.assets.enemies.flyingUFO, xPercentage:  0.5, minPosition:  0.05},
           { name: 'brain', id: 'brain', class: Brain, data: this.assets.enemies.brain, xPercentage:  0.5, minPosition: 0.3 },
           //{ name: 'brainSpecial', id: 'brain', class: Goomba, data: this.assets.enemies.goomba, xPercentage:  0.75, minPosition: 0.5 }, //this special name is used for random event 2 to make sure that only one of the Goombas ends the random event
-          { name: 'monkey', id: 'player', class: Player, data: this.assets.players.monkey },
+          { name: 'lopez', id: 'player', class: Player, data: this.assets.players.lopez },
           { name: 'gravestone', id: 'gravestone', class: Gravestone, data: this.assets.obstacles.gravestone },
           { name: 'complete', id: 'background', class: BackgroundTransitions,  data: this.assets.backgrounds.complete },
         ];
